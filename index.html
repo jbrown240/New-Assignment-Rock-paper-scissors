@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a252f;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .game-container {
+            background-color: #2c3e50;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            margin-top: 0;
+            color: #f1c40f;
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            background-color: #34495e;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .score-box h2 {
+            margin: 0;
+            font-size: 16px;
+            color: #bdc3c7;
+        }
+        .score-box p {
+            margin: 5px 0 0 0;
+            font-size: 28px;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .btn-choice {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.1s, background-color 0.2s;
+        }
+        .btn-choice:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .btn-choice:active {
+            transform: translateY(0);
+        }
+        .results-box {
+            background-color: #34495e;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 80px;
+        }
+        .results-box p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        #winner-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        .btn-reset {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-top: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-reset:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Rock, Paper, Scissors</h1>
+        <p>Select your move to play against the computer!</p>
+
+        <div class="scoreboard">
+            <div class="score-box">
+                <h2>Player</h2>
+                <p id="player-score">0</p>
+            </div>
+            <div class="score-box">
+                <h2>Computer</h2>
+                <p id="computer-score">0</p>
+            </div>
+        </div>
+
+        <div class="choices">
+            <button class="btn-choice" onclick="playGame('rock')">✊ Rock</button>
+            <button class="btn-choice" onclick="playGame('paper')">✋ Paper</button>
+            <button class="btn-choice" onclick="playGame('scissors')">✌️ Scissors</button>
+        </div>
+
+        <div class="results-box">
+            <p id="choice-text">Make your move!</p>
+            <p id="winner-text"></p>
+        </div>
+
+        <button class="btn-reset" onclick="resetGame()">Reset Score</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
